@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="panel panel-primary">
+  <div class="panel-heading">Chatroom "<%=@chatroom.chr_name%>"</div>
+  <div class="panel-body tab-pane" id="chatcontent">
+<%= render(partial: 'content',locals: {chats: @chats })%>
+ </div>
+</div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<div class="row">
+     <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+        <%= form_for(@chat,:url => {:controller=>"chat", :action => "chatsend" },remote: true) do |f| %>
+          <div class="col-lg-10">
+              <%= f.text_area :ch_text,:class => 'form-control',:id => 'chattextarea'%>
+              
+          </div>
+           <div class="col-lg-2">
+               <button type="submit" id="sendchat" class="btn btn-primary">
+                    Send
+                </button>
+               
+           </div>
+           <%end%>
+        </div>
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
+        
+    </div>
+    <div class="col-lg-2"></div>
+    </div>
+    
+    <script>
+    $('#sendchat').click(function() {
+       
+        
+    })
+    </script>

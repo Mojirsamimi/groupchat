@@ -1,0 +1,22 @@
+<div id="chat-facet">
+         <%chats.each do |c|%>
+        <div class="row">
+          <div class="col-lg-6">   
+       <%if c.user_id!=current_user.id%>
+       <span class="label label-warning"><%=c.user_name%></span> <span class="small" style="opacity: 0.5"><%=c.created_at%></span>
+        <div class="alert alert-warning" role="alert"><%=c.ch_text%></div>
+       
+       <%end%>
+        </div>
+        
+        <div class="col-lg-6">
+           
+          <%if c.user_id==current_user.id%>
+           <span class="small" style="opacity: 0.5"><%=c.created_at%></span>
+        <div class="alert alert-success" role="alert"><%=c.ch_text%></div>
+       <%end%>
+             </div>     
+         </div>
+          <%end%>
+         
+</div>
