@@ -18,7 +18,7 @@
     <div class="row">
         <%= form_for(@chat,:url => {:controller=>"chat", :action => "chatsend" },remote: true) do |f| %>
           <div class="col-lg-10">
-              <%= f.text_area :ch_text,:class => 'form-control',:id => 'chattextarea'%>
+              <%= f.text_field :ch_text,:class => 'form-control',:id => 'chattextarea'%>
               
           </div>
            <div class="col-lg-2">
@@ -30,7 +30,7 @@
            <%end%>
         </div>
   </div>
-  <div class="panel-footer">Panel footer</div>
+  <div class="panel-footer">Press Enter key to send your message.</div>
 </div>
         
     </div>

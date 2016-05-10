@@ -1,10 +1,48 @@
 <div class="page-header">
   <h1>Select the chatroom you want to enter</h1>
 </div>
-<%@chatrooms.each do |c|%>
-<div class="row text-center">
-<a href="<%=c.id.to_s%>" class="btn btn-info" role="button"><%=c.chr_name%></a>
-
+<div class="row">
+     <%@chatrooms.each_slice(3) do |c1,c2,c3|%>
+  <div class="col-sm-6 col-md-4">
+     
+    <div class="thumbnail">
+      <%=image_tag(c1.chr_name)%>
+      <div class="caption">
+        <h3><%=c1.chr_name%></h3>
+        <p>...</p>
+        <p><a href="<%=c1.id.to_s%>" class="btn btn-primary" role="button">Enter Chatroom</a></p>
+      </div>
+    </div>
+    
+  </div>
+   <div class="col-sm-6 col-md-4">
+     
+    <div class="thumbnail">
+      <%=image_tag(c2.chr_name)%>
+      <div class="caption">
+        <h3><%=c2.chr_name%></h3>
+        <p>...</p>
+        <p><a href="<%=c2.id.to_s%>" class="btn btn-primary" role="button">Enter Chatroom</a> </p>
+      </div>
+    </div>
+    
+  </div>
+   <div class="col-sm-6 col-md-4">
+     
+    <div class="thumbnail">
+      <%=image_tag(c3.chr_name)%>
+      <div class="caption">
+        <h3><%=c3.chr_name%></h3>
+        <p>...</p>
+        <p><a href="<%=c3.id.to_s%>" class="btn btn-primary" role="button">Enter Chatroom</a> </p>
+      </div>
+    </div>
+    
+  </div>
+  <%end%>
 </div>
-<br/>
-<%end%>
+
+
+
+
+

@@ -1,4 +1,5 @@
 class ChatController < ApplicationController
+   before_action :authenticate_user!
   def chatsend
     chat=Chat.new
     chat.user_id=current_user.id
