@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'add_reset_pk_sequence_to_base.rb'
-Chatroom.delete_all
 Chat.delete_all
+Chatroom.delete_all
 Chatroom.reset_pk_sequence
 Chat.reset_pk_sequence
 Chatroom.create(chr_name: "Funny")
