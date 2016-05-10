@@ -4,7 +4,7 @@
         <div class="panel panel-primary">
   <div class="panel-heading">Chatroom "<%=@chatroom.chr_name%>"</div>
   <div class="panel-body tab-pane" id="chatcontent">
-<%= render(partial: 'content',locals: {chats: @chats })%>
+<%= render(partial: 'content')%>
  </div>
 </div>
     </div>
@@ -46,7 +46,9 @@
 var pusher = new Pusher('<%= Pusher.key %>'); // uses your APP KEY
 var channel = pusher.subscribe('test_channel');
 channel.bind('chatroom<%=@chatroom.id%>', function(data) {
-  alert(data.greeting);
+  $('#chatcontent').html("<%= escape_javascript (render(partial: 'chatroom/content')) %>");
+
+$('#chatcontent').animate({scrollTop: $('#chat-facet').height()});
 });
 </script>
     
