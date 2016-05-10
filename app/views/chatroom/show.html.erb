@@ -46,7 +46,7 @@
 var pusher = new Pusher('<%= Pusher.key %>'); // uses your APP KEY
 var channel = pusher.subscribe('test_channel');
 channel.bind('chatroom<%=@chatroom.id%>', function(data) {
-    alert(hello)
+   
   $('#chatcontent').html(data.chat_html);
 
 $('#chatcontent').animate({scrollTop: $('#chat-facet').height()});
