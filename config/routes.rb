@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post 'chatroom/:id/chatsend' => 'chat#chatsend'
-
+  get 'chatroom/:id/chatroom_refresher' => 'chatroom#chatroom_refresher'
   get 'chatroom/index'
   get 'chatroom/:id' => 'chatroom#show'
   devise_for :users

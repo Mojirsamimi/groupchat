@@ -7,7 +7,12 @@ class ChatroomController < ApplicationController
     @chats=@chatroom.chats
     @chat=Chat.new
   end
-  
+  def chatroom_refresher
+    respond_to do |format|    
+       
+        format.js    
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chatroom
