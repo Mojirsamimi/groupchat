@@ -5,6 +5,8 @@ class ChatController < ApplicationController
     chat.chatroom_id=params[:id]
     chat.ch_text=params[:chat][:ch_text]
      @chat1=Chatroom.find(params[:id]).chats
+     Pusher['test_channel'].trigger('greet', {:greeting => "Hello there!"})
+
     respond_to do |format|
       if chat.save
        
