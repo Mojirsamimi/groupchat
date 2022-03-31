@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby 2.7.5
+ruby '2.7.5'
 
 gem 'devise', '3.4.1'
 gem 'bootstrap-sass','~> 3.3.6'
